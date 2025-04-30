@@ -1,27 +1,20 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const apiRouter = require("./src/routes/index");
-const morgan = require("morgan");
+// const morgan = require("morgan");
 // const rateLimit = require("express-rate-limit");
 
 const app = express();
 const port = 3000;
 
-app.use((err, req, res, next) => {
-  console.error('Unhandled error:', err.stack);
-  res.status(500).json({ error: 'Something went wrong on the server.' });
-});
-
-
 // Middleware
 app.use(express.json());
-app.use(morgan('combined'));
+// app.use(morgan('combined'));
 // app.use(rateLimit({ windowMs: 15 * 60 * 1000, limit: 100 }));
 
 mongoose.connect("mongodb://localhost:27017/inventoryapp", { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use('/api', apiRouter);
-
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
