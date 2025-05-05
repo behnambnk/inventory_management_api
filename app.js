@@ -18,7 +18,22 @@ app.use(express.json());
 app.use(morgan('combined'));
 // app.use(rateLimit({ windowMs: 15 * 60 * 1000, limit: 100 }));
 
-mongoose.connect("mongodb://localhost:27017/inventoryapp", { useNewUrlParser: true, useUnifiedTopology: true });
+
+// MongoDB Atlas URI
+const uri = "mongodb+srv://bbanikarimi:n4eRxYnPszQjo9Gf@cluster-beh.4nka11h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster-beh";
+
+// Connect and start server
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => {
+  console.log("✅ Connected to MongoDB Atlas");
+  app.listen(port, () => {
+    console.log(`🚀 Server is running on http://localhost:${port}`);
+  });
+}).catch(err => {
+  console.error("❌ MongoDB connection error:", err);
+});
 
 app.use('/api', apiRouter);
 
