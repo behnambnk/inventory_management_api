@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const apiRouter = require("./src/routes/index");
+const cors = require("cors"); 
+
 // const morgan = require("morgan");
 // const rateLimit = require("express-rate-limit");
 
@@ -9,6 +11,7 @@ const port = 3000;
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 // app.use(morgan('combined'));
 // app.use(rateLimit({ windowMs: 15 * 60 * 1000, limit: 100 }));
 
