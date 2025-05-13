@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const apiRouter = require("./src/routes/index");
 const morgan = require("morgan");
+const cors = require("cors"); 
+app.use(cors());
 // const rateLimit = require("express-rate-limit");
 
 const app = express();
