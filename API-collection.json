@@ -1,0 +1,394 @@
+{
+    "v": 7,
+    "name": "IFN666 Assessment API",
+    "folders": [],
+    "requests": [
+      {
+        "v": "12",
+        "name": "Get All Users",
+        "method": "GET",
+        "endpoint": "<<BASE_URL>>/api/users",
+        "params": [],
+        "headers": [],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": null,
+          "body": null
+        },
+        "requestVariables": [],
+        "responses": {},
+        "proxy": {
+          "enabled": true
+        }
+      },
+      {
+        "v": "12",
+        "name": "Get User by ID",
+        "method": "GET",
+        "endpoint": "<<BASE_URL>>/api/users/663c5aef1a23456789abcdef",
+        "params": [],
+        "headers": [],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": null,
+          "body": null
+        },
+        "requestVariables": [],
+        "responses": {},
+        "proxy": {
+          "enabled": true
+        }
+      },
+      {
+        "v": "12",
+        "name": "Create User",
+        "method": "POST",
+        "endpoint": "<<BASE_URL>>/api/users",
+        "params": [],
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": "application/json",
+          "body": "{\"username\": \"testuser\", \"password\": \"testpass123\"}"
+        },
+        "requestVariables": [],
+        "responses": {},
+        "proxy": {
+          "enabled": true
+        }
+      },
+      {
+        "v": "12",
+        "name": "Update User",
+        "method": "PUT",
+        "endpoint": "<<BASE_URL>>/api/users/663c5aef1a23456789abcdef",
+        "params": [],
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": "application/json",
+          "body": "{\"username\": \"testuser\", \"password\": \"testpass123\"}"
+        },
+        "requestVariables": [],
+        "responses": {},
+        "proxy": {
+          "enabled": true
+        }
+      },
+      {
+        "v": "12",
+        "name": "Delete User",
+        "method": "DELETE",
+        "endpoint": "<<BASE_URL>>/api/users/663c5aef1a23456789abcdef",
+        "params": [],
+        "headers": [],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": null,
+          "body": null
+        },
+        "requestVariables": [],
+        "responses": {},
+        "proxy": {
+          "enabled": true
+        }
+      },
+      {
+        "v": "12",
+        "name": "Get All Items",
+        "method": "GET",
+        "endpoint": "<<BASE_URL>>/api/items",
+        "params": [],
+        "headers": [],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": null,
+          "body": null
+        },
+        "requestVariables": [],
+        "responses": {},
+        "proxy": {
+          "enabled": true
+        }
+      },
+      {
+        "v": "12",
+        "name": "Get Item by ID",
+        "method": "GET",
+        "endpoint": "<<BASE_URL>>/api/items/663c5af01b23456789abcdef",
+        "params": [],
+        "headers": [],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": null,
+          "body": null
+        },
+        "requestVariables": [],
+        "responses": {},
+        "proxy": {
+          "enabled": true
+        }
+      },
+      {
+        "v": "12",
+        "name": "Create Item",
+        "method": "POST",
+        "endpoint": "<<BASE_URL>>/api/items",
+        "params": [],
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": "application/json",
+          "body": "{\"name\": \"Example Item\", \"description\": \"Sample item\"}"
+        },
+        "requestVariables": [],
+        "responses": {},
+        "proxy": {
+          "enabled": true
+        }
+      },
+      {
+        "v": "12",
+        "name": "Update Item",
+        "method": "PUT",
+        "endpoint": "<<BASE_URL>>/api/items/663c5af01b23456789abcdef",
+        "params": [],
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": "application/json",
+          "body": "{\"name\": \"Example Item\", \"description\": \"Sample item\"}"
+        },
+        "requestVariables": [],
+        "responses": {},
+        "proxy": {
+          "enabled": true
+        }
+      },
+      {
+        "v": "12",
+        "name": "Delete Item",
+        "method": "DELETE",
+        "endpoint": "<<BASE_URL>>/api/items/663c5af01b23456789abcdef",
+        "params": [],
+        "headers": [],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": null,
+          "body": null
+        },
+        "requestVariables": [],
+        "responses": {},
+        "proxy": {
+          "enabled": true
+        }
+      },
+      {
+        "v": "12",
+        "name": "Get All Categories",
+        "method": "GET",
+        "endpoint": "<<BASE_URL>>/api/categories",
+        "params": [],
+        "headers": [],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": null,
+          "body": null
+        },
+        "requestVariables": [],
+        "responses": {},
+        "proxy": {
+          "enabled": true
+        }
+      },
+      {
+        "v": "12",
+        "name": "Get Category by ID",
+        "method": "GET",
+        "endpoint": "<<BASE_URL>>/api/categories/663c5af11c23456789abcdef",
+        "params": [],
+        "headers": [],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": null,
+          "body": null
+        },
+        "requestVariables": [],
+        "responses": {},
+        "proxy": {
+          "enabled": true
+        }
+      },
+      {
+        "v": "12",
+        "name": "Create Category",
+        "method": "POST",
+        "endpoint": "<<BASE_URL>>/api/categories",
+        "params": [],
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": "application/json",
+          "body": "{\"name\": \"Example Category\", \"description\": \"Sample category\"}"
+        },
+        "requestVariables": [],
+        "responses": {},
+        "proxy": {
+          "enabled": true
+        }
+      },
+      {
+        "v": "12",
+        "name": "Update Category",
+        "method": "PUT",
+        "endpoint": "<<BASE_URL>>/api/categories/663c5af11c23456789abcdef",
+        "params": [],
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": "application/json",
+          "body": "{\"name\": \"Example Category\", \"description\": \"Sample category\"}"
+        },
+        "requestVariables": [],
+        "responses": {},
+        "proxy": {
+          "enabled": true
+        }
+      },
+      {
+        "v": "12",
+        "name": "Delete Category",
+        "method": "DELETE",
+        "endpoint": "<<BASE_URL>>/api/categories/663c5af11c23456789abcdef",
+        "params": [],
+        "headers": [],
+        "preRequestScript": "",
+        "testScript": "",
+        "auth": {
+          "authType": "inherit",
+          "authActive": true
+        },
+        "body": {
+          "contentType": null,
+          "body": null
+        },
+        "requestVariables": [],
+        "responses": {},
+        "proxy": {
+          "enabled": true
+        }
+      }
+    ],
+    "auth": {
+      "authType": "none",
+      "authActive": true
+    },
+    "headers": [],
+    "_ref_id": "coll_ifn666_12345678-aaaa-bbbb-cccc-0123456789ab",
+    "variables": [
+      {
+        "key": "BASE_URL",
+        "value": "inventory-api-ia8l.onrender.com"
+      }
+    ]
+  }

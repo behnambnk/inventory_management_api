@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const category = require("./category");
 
 const itemSchema = new mongoose.Schema({
     name: {
@@ -20,6 +21,11 @@ const itemSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
+        required: true
+    },
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Category",
         required: true
     },
     createdAt: {
