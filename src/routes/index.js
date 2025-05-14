@@ -1,12 +1,11 @@
 const express = require("express");
 const authRouter = require("./auth");
-// const inventoryRouter = require("./inventory");
-// const itemRouter = require("./item");
+const itemRouter = require("./item");
+const authenticateToken = require("../middleware/authenticationToken");
 
 const router = express.Router();
 
 router.use("/auth", authRouter);
-// router.use("/inventories", inventoryRouter);
-// router.use("/items", itemRouter);
+router.use("/items", authenticateToken, itemRouter);
 
 module.exports = router;

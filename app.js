@@ -24,9 +24,11 @@ app.use(cors());
 
 // MongoDB Atlas URI
 const uri = "mongodb+srv://bbanikarimi:n4eRxYnPszQjo9Gf@cluster-beh.4nka11h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster-beh";
+const localUri = "mongodb://localhost:27017/inventoryapp"
+
 
 // Connect and start server
-mongoose.connect(uri, {
+mongoose.connect(localUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
