@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const apiRouter = require("./src/routes/index");
 const morgan = require("morgan");
 const cors = require("cors"); 
+require('dotenv').config();
+const dbUrl = process.env.DB_URL;
 
 // const rateLimit = require("express-rate-limit");
 
@@ -22,13 +24,8 @@ app.use(cors());
 // app.use(rateLimit({ windowMs: 15 * 60 * 1000, limit: 100 }));
 
 
-// MongoDB Atlas URI
-const uri = "mongodb+srv://bbanikarimi:n4eRxYnPszQjo9Gf@cluster-beh.4nka11h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster-beh";
-const localUri = "mongodb://localhost:27017/inventoryapp"
-
-
 // Connect and start server
-mongoose.connect(localUri, {
+mongoose.connect(dbUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
