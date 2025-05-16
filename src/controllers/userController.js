@@ -8,8 +8,8 @@ exports.getAllUsers = asyncHandler(async (req, res) => {
 });
 
 // GET user by ID
-exports.getUserById = asyncHandler(async (req, res) => {
-  const user = await User.findById(req.params.id).select("-password");
+exports.getUser = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.user.userId).select("-password");
   if (!user) {
     res.status(404);
     throw new Error("User not found");
