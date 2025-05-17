@@ -9,7 +9,7 @@ const dbUrl = process.env.DB_URL;
 // const rateLimit = require("express-rate-limit");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use((err, req, res, next) => {
   console.error('Unhandled error:', err.stack);
