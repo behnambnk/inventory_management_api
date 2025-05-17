@@ -1,5 +1,6 @@
 const { get } = require('mongoose');
 const Item = require('../models/item');
+const Category = require('../models/category');
 const asyncHandler = require('express-async-handler');
 
 const createItem = asyncHandler(async (req, res) => {
@@ -7,15 +8,33 @@ const createItem = asyncHandler(async (req, res) => {
     console.log("Received create item request:", req.body);
 
     const { name, age, price, description, categoryId } = req.body;
-    const item = new Item({ name, price, description, age, userId: user.userId, category: categoryId});
+    const item = new Item({ name, price, description, age, userId: user.userId, categoryId: categoryId});
     await item.save();
     res.status(201).json({ message: "Item created" });
 });
 
 const getItems = asyncHandler(async (req, res) => {
     const user = req.user;
-    const items = await Item.find({ userId: user.userId }).populate('category');;
-    res.status(200).json({ items });
+    const items = await Item.find({ userId: user.userId })
+
+    for (let item of items) {
+        const category = await Category.findById(item.categoryId)
+        console.log("Category found:", JSON.stringify(category));
+        item.category = { _id: category?._id, name: category?.name };
+    }
+    const formatted = items.map(item => ({
+        _id: item._id,
+        name: item.name,
+        description: item.description,
+        price: item.price,
+        age: item.age,
+        userId: item.userId,
+        categoryName: item.category?.name,
+        categoryId: item.category?._id,
+        createdAt: item.createdAt
+    }));
+
+    res.status(200).json({ items: formatted });
 });
 
 const updateItem = asyncHandler(async (req, res) => {
