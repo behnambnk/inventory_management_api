@@ -18,6 +18,6 @@ exports.login = asyncHandler( async (req, res) => {
   if (!user || !(await user.comparePassword(password))) {
     return res.status(401).json({ error: "Invalid credentials" });
   }
-  const token = jwt.sign({ userId: user._id, username: user.username }, tokenSecret, { expiresIn: "24h" });
+  const token = jwt.sign({ userId: user._id, username: user.username }, tokenSecret, { expiresIn: "3600h" });
   res.json({ authToken: token });
 });
