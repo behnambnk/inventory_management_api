@@ -10,7 +10,7 @@ const createItem = asyncHandler(async (req, res) => {
     const { name, age, price, description, categoryId, longitude, latitude } = req.body;
     const item = new Item({ name, price, description, age, userId: user.userId, categoryId: categoryId, longitude, latitude });
     await item.save();
-    res.status(201).json({ message: "Item created" });
+    res.status(201).json({ _id: item._id, name: item.name, price: item.price, description: item.description, age: item.age, userId: item.userId, categoryId: item.categoryId, longitude: item.longitude, latitude: item.latitude, createdAt: item.createdAt});
 });
 
 const getItems = asyncHandler(async (req, res) => {
